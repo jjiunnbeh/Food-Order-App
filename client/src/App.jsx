@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Header />
-      <div style={{ color: 'white' , fontSize: '3rem', textAlign: 'center'}}>OUR MENU</div>
-      <hr style={{marginLeft: '5%', marginRight:' 5%', opacity: 0.5, borderColor: 'lightgray'}}/>
+      <div style={{ color: 'white' , fontSize: '3.5rem', textAlign: 'center'}}>OUR MENU</div>
+      <hr style={{marginLeft: '5%', marginRight:' 5%', opacity: 0.8, borderColor: 'lightgray'}}/>
     </>
   )
 }
