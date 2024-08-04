@@ -16,7 +16,7 @@ function Header()
         </div>
          <button id='cart-icon' onClick={handleOpenCartClick}><BsCart /> (0)</button>
       </ header>
-      <div style={{ color: 'white' , fontSize: '2rem', textAlign: 'center'}}>OUR MENU</div>
+      <div style={{ color: 'white' , fontSize: '2rem', textAlign: 'center', fontFamily:'initial'}}>OUR MENU</div>
       <hr style={{marginLeft: '5%', marginRight:' 5%', opacity: 0.8, borderColor: 'lightgray'}}/>
        </>
 
