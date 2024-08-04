@@ -1,15 +1,29 @@
 import { useContext } from "react";
 import Modal from "./Modal";
 import { CartContext } from "../store/CartContext";
-import { cartTotal } from "../utilities/cosntant";
+import UserProgressContext from "../store/UserProgressContext";
 
 function Cart() {
-  const ctx = useContext(CartContext);
+  const userProgressCtx = useContext(UserProgressContext);
+  const cartContext = useContext(CartContext);
+  const cartTotal = cartContext.items.reduce(
+  (totalPrice, item) => totalPrice + item.quantity * item.price,
+  0
+);
+const handleCloseCart = ()=>
+{
+    userProgressCtx.hideCart();
+}
+const handleCheckOut = ()=>
+{
+    userProgressCtx.showCheckOut();
+}
+
   return (
-    <Modal className="cart">
+    <Modal className="cart" active={userProgressCtx.progress === 'cart'}>
       <h2>Your Cart</h2>
       <ul>
-        {ctx.items.map((item) => (
+        {cartContext.items.map((item) => (
           <li key={item.id}>
             {item.name} - {item.quantity}
           </li>
@@ -17,8 +31,8 @@ function Cart() {
       </ul>
       <p className="cart-total">S$ {cartTotal}</p>
       <p className="modal-actions">
-        <button>Close</button>
-        <button>CheckOut</button>
+        <button onClick={handleCloseCart}>Close</button>
+        <button onClick={handleCheckOut}>CheckOut</button>
       </p>
     </Modal>
   );
