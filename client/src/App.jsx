@@ -11,7 +11,7 @@ function App() {
     <CartContextProvider>
       <Header />
       <Menu />
-      
+    
       </CartContextProvider>
     </>
   )
