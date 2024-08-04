@@ -19,7 +19,7 @@ function Cart() {
   };
 
   return (
-    <Modal className="cart" active={userProgressCtx.progress === "cart"}>
+    <Modal className="cart" active={userProgressCtx.progress === "cart"} onClose={userProgressCtx.progress === "cart" ? handleCloseCart : null}>
       <h2>Your Cart {cartContext.items.length === 0 && 'is now empty'}</h2>
       <ul>
         {cartContext.items.map((item) => (
@@ -33,7 +33,7 @@ function Cart() {
           />
         ))}
       </ul>
-      {cartContext.items.length > 0 && <p className="cart-total">S$ {cartTotal}</p>}
+      {cartContext.items.length > 0 && <p className="cart-total">S$ {cartTotal.toFixed(2)}</p>}
       <p className="modal-actions">
         <button onClick={handleCloseCart}>Close</button>
         {cartContext.items.length > 0 && <button onClick={handleCheckOut}>CheckOut</button>}
