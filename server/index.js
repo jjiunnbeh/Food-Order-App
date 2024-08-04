@@ -7,6 +7,7 @@ import menuRouter from "./routes/menu.route.js";
 import bodyParser from "body-parser";
 
 
+
 const appFirebase = initializeApp(firebaseConfig);
 const db = getFirestore(appFirebase);
 

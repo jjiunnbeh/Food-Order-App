@@ -7,15 +7,15 @@ function Menu() {
 
   useEffect(() => {
     fetchMenu();
-  }, [menu]);
+  }, []);
 
   const fetchMenu = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/get-menu`, { method: "GET" });
+      const response = await fetch(`${BASE_URL}/api/menu/get-menu`, { method: "GET" });
       if (response.status === 200) {
         console.log("Menu fetched successfully");
-        const resData = await response.json(); //Menu
-        setMenu(resData);
+        const data = await response.json();
+        setMenu(data[0].menuItems);
       }
     } catch (error) {
       console.log(error);
@@ -24,7 +24,7 @@ function Menu() {
 
   return (
     <ul id="menu">
-        {menu.map((item)=>(<li key={item.id}>{item.name}</li>))}
+        {menu.map((item)=>(<li key={item.id}><h1>{item.name}</h1></li>))}
     </ul>
   );
 }
