@@ -22,7 +22,7 @@ const app = express();
 
 app.use(cors({ origin: ['http://localhost:5173','http://localhost:5174'] }));
 app.use(bodyParser.json());
-app.use('/api/menu', menuRouter);
+app.use('/api/online-order', menuRouter);
 
 app.listen(portNumber, ()=>
   {
