@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Menu from './components/Menu'
+import CartContextProvider, { CartContext } from './store/CartContext'
 
 
 function App() {
@@ -7,9 +8,11 @@ function App() {
 
   return (
     <>
+    <CartContextProvider>
       <Header />
       <Menu />
-
+      
+      </CartContextProvider>
     </>
   )
 }
