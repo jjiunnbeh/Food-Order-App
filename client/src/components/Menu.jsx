@@ -2,6 +2,8 @@ import { BASE_URL } from "../utilities/cosntant";
 import React from "react";
 import { useState, useEffect } from "react";
 
+import FoodCard from "./FoodCard";
+
 function Menu() {
   const [menu, setMenu] = useState([]);
 
@@ -24,7 +26,7 @@ function Menu() {
 
   return (
     <ul id="menu">
-        {menu.map((item)=>(<li key={item.id}><h1>{item.name}</h1></li>))}
+        {menu.map((item)=>(<FoodCard item={item} key={item.id}/>))}
     </ul>
   );
 }
