@@ -1,25 +1,17 @@
 import express from "express";
 import { initializeApp } from "firebase/app";
+import { firebaseConfig, portNumber } from "./utilities/constant.js";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
-import dotenv from 'dotenv';
+import cors from "cors";
 
 const app = express();
-dotenv.config();
-const portNumber = 3000;
+
 app.listen(portNumber, ()=>
 {
     console.log(`Server is listening at port ${portNumber}`);
     console.log();
 });
-
-const firebaseConfig = {
-    apiKey: process.env.VITE_FIREBASE_API_KEY,
-    authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.VITE_FIREBASE_APP_ID
-  };
+app.use(cors({ origin: ['http://localhost:5173','http://localhost:5174'] }));
 
 
 const appFirebase = initializeApp(firebaseConfig);
@@ -30,6 +22,10 @@ if (db != null) {
 } else {
     console.log("Failed to connect to Firebase Firestore");
 }
+
+
+
+
 
 try {
     const docRef = await addDoc(collection(db, "users"), {
