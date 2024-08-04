@@ -6,14 +6,13 @@ function Modal({children, active, className = '' })
 {
     const dialogRef = useRef();
     useEffect(() => {
+        const modal = dialogRef.current;
         if(active)
         {
-            dialogRef.current.showModal();
+            modal.showModal();
         }
-        else
-        {
-            dialogRef.current.close();
-        }
+        return () => modal.close();
+
     }   , [active]);
 
     return createPortal(
