@@ -13,7 +13,7 @@ function Menu() {
 
   const fetchMenu = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/api/menu/all`, { method: "GET" });
+      const response = await fetch(`${BASE_URL}/api/onlinemenu/menu`, { method: "GET" });
       if (response.status === 200) {
         console.log("Menu fetched successfully");
         const data = await response.json();

@@ -240,6 +240,47 @@ header {
   gap: 5rem;
 }
 
+.successful
+{
+  display: flex;
+  justify-content: center;
+  
+}
 
+.successful > img {
+  width: 50%;  
+  height: 50%;
+}
+
+.checkout-status
+{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.pop-up-button {
+display: flex;
+  justify-content: center;
+    
+}
+
+.pop-up-button button
+{
+  width: 20%;
+  height: 5rem;
+  border-radius: 10px;
+
+  font-size: 2rem;
+}
+.fail
+{
+  display: flex;
+  justify-content: center;
+  
+}
+.fail > img{
+  width: 50%;
+  height: 50%;
+}
 
 

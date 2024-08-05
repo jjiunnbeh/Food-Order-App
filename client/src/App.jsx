@@ -4,6 +4,7 @@ import CartContextProvider, { CartContext } from "./store/CartContext";
 import { UserProgressContextProvider } from "./store/UserProgressContext";
 import Cart from "./components/Cart";
 import CheckOut from "./components/CheckOut";
+import PopUpModal from "./components/PopUpModal";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Menu />
           <Cart />
           <CheckOut />
+          <PopUpModal />
         </CartContextProvider>
       </UserProgressContextProvider>
     </>
