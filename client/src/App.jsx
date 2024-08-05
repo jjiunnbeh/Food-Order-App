@@ -10,7 +10,7 @@ function App() {
     <>
       <UserProgressContextProvider>
         <CartContextProvider>
-          <Header />
+          <Header name='Western Food' />
           <Menu />
           <Cart />
           <CheckOut />

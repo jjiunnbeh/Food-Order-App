@@ -3,7 +3,7 @@ import { BsCart } from "react-icons/bs";
 import UserProgressContext from "../store/UserProgressContext";
 import { CartContext } from "../store/CartContext";
 
-function Header() {
+function Header({name}) {
   const userProgressCtx = useContext(UserProgressContext);
   const cartCtx = useContext(CartContext);
   const handleClick = () => {
@@ -14,7 +14,7 @@ function Header() {
     <>
       <header>
         <div>
-          <h1 id="restuarant-name-header">RESTAURANT NAME</h1>
+          <h1 id="restuarant-name-header">{name}</h1>
         </div>
         <button id="cart-icon" onClick={handleClick}>
           <BsCart />

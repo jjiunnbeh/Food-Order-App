@@ -26,7 +26,7 @@ function CheckOut()
                 <FormInput label='Full Name' type='text' id='full-name' />
                 <FormInput label='Email-Address' type='email' id='email'/>
                 <FormInput label='Street' type='text' id='street' />
-                <div>
+                <div className="row">
                     <FormInput label='Zip Code' type='text' id='zip'/>
                     <FormInput label='City' type='text' id='city' />
                 </div>
