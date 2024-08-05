@@ -5,6 +5,7 @@ import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import cors from "cors";
 import menuRouter from "./routes/menu.route.js";
 import bodyParser from "body-parser";
+import orderRouter from "./routes/order.routes.js"
 
 
 
@@ -22,7 +23,9 @@ const app = express();
 
 app.use(cors({ origin: ['http://localhost:5173','http://localhost:5174'] }));
 app.use(bodyParser.json());
-app.use('/api/online-order', menuRouter);
+app.use(express.json());
+app.use('/api/onlinemenu', menuRouter);
+app.use('/api/onlineorders', orderRouter);
 
 app.listen(portNumber, ()=>
   {
